@@ -6,7 +6,7 @@ height="150" width="300">
 
 ### Abaixo é apresentado os arquivos deste repositório
 
-### hello.c
+### Arquivo hello.c
 
 ```c
 #include <stdio.h>
@@ -16,7 +16,7 @@ int main(){
 }
 ```
 
-### primeiro.c
+### Arquivo primeiro.c
 
 ```c
 /*
@@ -39,7 +39,7 @@ int main(){
 }
 ```
 
-### Operacoes.c
+### Arquivo Operacoes.c
 
 ```c
 int main (){
@@ -65,7 +65,7 @@ int main (){
 }
 ```
 
-### desconto.c
+### Arquivo desconto.c
 
 ```c
 int main(){
@@ -84,7 +84,7 @@ int main(){
 }
 ```
 
-### parimpar.c
+### Arquivo parimpar.c
 
 ```c
 #include <stdio.h>
@@ -104,7 +104,7 @@ int main(){
 }
 ```
 
-### media_aluno.c
+### Arquivo media_aluno.c
 
 ```c
 /*
@@ -154,7 +154,7 @@ int main(){
 }
 ```
 
-### bissexto.c
+### Arquivo bissexto.c
 
 ```c
 #include <stdio.h>
@@ -177,7 +177,7 @@ int main() {
 }
 ```
 
-### while1.c
+### Arquivo while1.c
 
 ```c
 #include <stdio.h>
@@ -192,7 +192,7 @@ return 0;
 }
 ```
 
-### while_bissexto.c
+### Arquivo while_bissexto.c
 
 ```c
 #include <stdio.h>
@@ -215,7 +215,7 @@ int main (){
 }
 ```
 
-### while_dec_bin.c
+### Arquivo while_dec_bin.c
 
 ```c
 #include <stdio.h>
@@ -234,6 +234,27 @@ int main(){
         pos = pos * 10;
     }
     printf("%d\n",rs);
+    return 0;
+}
+```
+### Arquivo while_bin_dec.c
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int binario[6] = {1,0,1,1,1,0};
+
+    int rs = 0;
+    int pos = 0;
+    int exp = 5;
+    while (pos <= 5){
+        rs += binario[pos] * ( pow(2, exp));
+        pos++;
+        exp--;
+    }
+    printf("%d\n", rs);
     return 0;
 }
 ```
