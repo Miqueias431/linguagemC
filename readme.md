@@ -342,12 +342,12 @@ int main(){
     for ( i = 0; i <= 9; i++){
         soma += loud[i];
     }
-    printf(" O resultado da soma é %d\n", soma);
+    printf(" O resultado da soma é: %d\n", soma);
 
     for ( i = 0; i < 10; i++){
         media += loud[i];
     }
-    printf("O resultado da média é %d\n",(media/10));
+    printf("O resultado da média é: %d\n",(media/10));
 
     for ( i = 0; i < 10; i++){
         if (loud[i] % 2 == 0){
