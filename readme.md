@@ -258,3 +258,104 @@ int main() {
     return 0;
 }
 ```
+
+### Arquivo for1.c
+
+```c
+#include<stdio.h>
+
+int main(){
+    int x;
+    for (x = 1; x <=10; x++){
+        printf("%d\n",x);
+    }
+    return 0;
+}
+```
+
+### Arquivo tabuada.c
+
+```c
+#include<stdio.h>
+
+int main(){
+    int num, num2;
+    printf("Digite um número para a tabuada:\n");
+    scanf("%d",&num);
+    for(num2 = 1 ; num2 <=10; num2++){
+        printf("%d x %d = %d\n",num,num2,(num*num2));
+    }
+
+}
+```
+
+### Arquivo baseexpoente.c
+
+```c
+#include <stdio.h>
+
+int main() {
+    
+    int base,exp,i,b;
+
+    printf("Digite a base:\n ");
+    scanf("%d",&base);
+
+    printf("Digite o expoente:\n ");
+    scanf("%d", &exp);
+
+    for (int i = 1; i < exp; i++) {
+        /*base *= b;*/
+        base = base * b;
+    }
+    
+    printf("%d\n",base);
+
+    return 0;
+}
+```
+
+### Arquivo colecao1.c
+
+```c
+// Array é um conjunto de dados sobre um determinado
+// assunto. Podemos falar de valores numéricos, textos,
+// datas, ou objetos
+#include <stdio.h>
+
+int main(){
+    int valores[5] = {10,5,8,12,7};
+    printf("%d\n", valores[5 - 1]);
+
+    return 0;
+}
+```
+
+### Arquivo colecao2.c
+
+```c
+#include <stdio.h>
+int main(){
+
+    int loud[10] = {1,21,11,8,19,45,7,24,26,18};
+    int soma = 0, media = 0, i;
+    for ( i = 0; i <= 9; i++){
+        soma += loud[i];
+    }
+    printf(" O resultado da soma é %d\n", soma);
+
+    for ( i = 0; i < 10; i++){
+        media += loud[i];
+    }
+    printf("O resultado da média é %d\n",(media/10));
+
+    for ( i = 0; i < 10; i++){
+        if (loud[i] % 2 == 0){
+            printf("%d\n",loud[i]);
+        }
+        
+    }
+    
+    return 0;
+}
+```
