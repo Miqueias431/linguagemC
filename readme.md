@@ -39,7 +39,7 @@ int main(){
 }
 ```
 
-### Arquivo Operacoes.c
+### Arquivo operacoes.c
 
 ```c
 int main (){
@@ -49,18 +49,24 @@ int main (){
     int subtrair;
     int multiplicar;
     int dividir;
+
     printf("Digite um Número e tecle enter: \n");
     scanf("%d", &n1); //permite acessar seção de memória da variável n1
+
     printf("Digite outro número e tecle enter: \n");
     scanf("%d", &n2);
-    soma=n1+n2; //ação para execultar o cálculo
+
+    //ações para execultar os cálculos
+    soma=n1+n2; 
     subtrair=n1-n2;
     multiplicar=n1*n2;
     dividir=n1/n2;
+
     printf("O resultado da soma é %d\n",soma ); //exibir resultado
     printf("O resultado da subtração é %d\n",subtrair);
     printf("O resultado da multiplicação é %d\n",multiplicar);
     printf("O resultado da divisão é %d\n",dividir);
+
     return 0;
 }
 ```
@@ -73,13 +79,18 @@ int main(){
     float percentual;
     float resultado;
     float ver_desconto;
+
     printf("Digite o preço do produto:\n");
     scanf("%f",&preco); // %f porque está trabalhando com float
+
     printf("Digite o desconto do produto:\n");
     scanf("%f",&percentual);
+
     resultado=preco-(preco*(percentual/100));
     ver_desconto=preco-resultado;
+
     printf("O preço do valor do produto com desconto de %2.2f é %2.2f\n",ver_desconto,resultado);
+
     return 0;
 }
 ```
@@ -91,6 +102,7 @@ int main(){
 
 int main(){
     int num;
+
     printf("Digite um número: \n");
     scanf("%d",&num);
 
@@ -100,6 +112,7 @@ int main(){
     else{
         printf("Este número é impar \n");
     }
+
     return 0;
 }
 ```
@@ -122,6 +135,7 @@ recuperação
 
 int main(){
     float n1,n2,n3,n4,md;
+
     printf("Digite a primeira nota: \n");
     scanf("%f",&n1);
 
@@ -233,7 +247,9 @@ int main(){
         rs = rs + pos * resto;
         pos = pos * 10;
     }
+
     printf("%d\n",rs);
+
     return 0;
 }
 ```
@@ -249,12 +265,15 @@ int main() {
     int rs = 0;
     int pos = 0;
     int exp = 5;
+
     while (pos <= 5){
         rs += binario[pos] * ( pow(2, exp));
         pos++;
         exp--;
     }
+
     printf("%d\n", rs);
+
     return 0;
 }
 ```
@@ -266,9 +285,11 @@ int main() {
 
 int main(){
     int x;
+
     for (x = 1; x <=10; x++){
         printf("%d\n",x);
     }
+
     return 0;
 }
 ```
@@ -280,12 +301,15 @@ int main(){
 
 int main(){
     int num, num2;
+
     printf("Digite um número para a tabuada:\n");
     scanf("%d",&num);
+
     for(num2 = 1 ; num2 <=10; num2++){
         printf("%d x %d = %d\n",num,num2,(num*num2));
     }
 
+    return 0;
 }
 ```
 
@@ -327,6 +351,7 @@ int main() {
 
 int main(){
     int valores[5] = {10,5,8,12,7};
+
     printf("%d\n", valores[5 - 1]);
 
     return 0;
@@ -341,14 +366,17 @@ int main(){
 
     int loud[10] = {1,21,11,8,19,45,7,24,26,18};
     int soma = 0, media = 0, i;
+
     for ( i = 0; i <= 9; i++){
         soma += loud[i];
     }
+
     printf(" O resultado da soma é: %d\n", soma);
 
     for ( i = 0; i < 10; i++){
         media += loud[i];
     }
+
     printf("O resultado da média é: %d\n",(media/10));
 
     for ( i = 0; i < 10; i++){
@@ -381,6 +409,7 @@ int main() {
             }
         }
     }
+
     printf("\n");
 
     return 0;
@@ -395,13 +424,17 @@ int main() {
 int main()
 {
     int valores[5] = {1, 2, 3, 4, 5};
+
     printf("Exibindo o primeiro valor: %d\n", valores[0]);
     printf("Exibindo o segundo valor: %d\n", valores[1]);
+
     int i;
+
     for (i = 0; i < 5; i++)
     {
         printf("Exibindo: %d\n", valores[i]);
     }
+
     return 0;
 }
 ```
@@ -472,6 +505,117 @@ int main()
     printf("Posição de v1: %p\nPosição de v2: %p\n", &v1, &v2);
     int rs = subtrair(&v1, &v2);
     printf("O resultado é: %d\n", rs);
+    return 0;
+}
+```
+
+### Arquivo malloc1.c
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *ptr_int;
+
+    ptr_int = (int *)malloc(sizeof(int));
+
+    printf("Endereço reservado %p\n",ptr_int);
+
+    if (ptr_int == NULL)
+    {
+        printf("Erro:Falha na alocação de memória.\n");
+
+        return 1;//Para a execução do programa
+    }
+
+    printf("Digite um número: \n");
+    scanf("%d", ptr_int);
+
+    printf("O valor digitado é %d e ele está em %p\n", *ptr_int,ptr_int);
+
+    free(ptr_int);
+
+    return 0;
+}
+```
+
+### Arquivo malloc2.c
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *array;
+    int tamanho = 5;
+
+    array = (int *)malloc(tamanho * sizeof(int));
+
+    if (array == NULL)
+    {
+        printf("Erro:Falha na alocação de memória.\n");
+
+        return 1; // Para a execução do programa
+    }
+    for (int i = 0; i < tamanho; i++)
+    {
+        array[i] = i + 1;
+    }
+    printf("Exibindo os dados do array\n");
+    for (int j = 0; j < tamanho; j++)
+    {
+        printf("%d -\n", array[j]);
+
+    }
+    free(array);
+    return 0;
+    
+}
+```
+
+### Arquivo arquivo.c
+
+```c
+#include <stdio.h>
+int main()
+{
+    FILE *arquivo;
+    char texto[100];
+
+    // Abre o arquivo para escrita
+    arquivo = fopen("teste.txt", "w");
+
+    if (arquivo == NULL)
+    {
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
+
+    // Escreve no arquivo
+    fprintf(arquivo, "Olá, este é um exemplo de manipulação de arquivos em C.");
+
+    // Fecha o arquivo
+    fclose(arquivo);
+
+    // Abre o aquivo para leitura
+    arquivo = fopen("teste.txt", "r");
+
+    if (arquivo == NULL)
+    {
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
+
+    // Lê o conteúdo do arquivo e imprime na tela
+    fgets(texto, 100, arquivo);
+    printf("Conteúdo do arquivo: %s\n", texto);
+
+    // Fecha o arquivo
+    fclose(arquivo);
+
     return 0;
 }
 ```
